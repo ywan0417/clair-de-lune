@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>个人网页</title>
     <style>
-        /* CSS 样式可以在这里添加 */
         body {
             margin: 0;
             padding: 0;
@@ -25,32 +24,35 @@
             color: #fff;
             font-size: 24px;
             font-family: Arial, sans-serif;
+            animation: moonlight 3s ease forwards;
         }
 
-        #main-content {
-            display: none;
+        #moonlight-animation {
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
         }
 
-        #calendar {
-            /* 日历模块样式 */
+        @keyframes moonlight {
+            0% {
+                background-color: #000;
+            }
+            100% {
+                background-color: #002147; /* 月光颜色 */
+            }
         }
 
-        #knowledge-area {
-            /* 知识专区模块样式 */
-        }
-
-        #daily-accumulation {
-            /* 今日积累模块样式 */
-        }
-
-        #guestbook {
-            /* 访客留言模块样式 */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
     <div id="opening-animation">
-        <!-- 月光打开动画 -->
         <div id="moonlight-animation">
             <img src="moon.png" alt="Moon" style="width: 200px; height: auto;">
         </div>
@@ -58,26 +60,16 @@
 
     <div id="main-content">
         <!-- 主页模块 -->
-        <div id="calendar">
-            <!-- 日历模块 -->
-            <!-- 显示当下时间和已出生天数 -->
-        </div>
-        <div id="knowledge-area">
-            <!-- 知识专区模块 -->
-            <!-- 经济、文化、科技三个UI并列一行 -->
-        </div>
-        <div id="daily-accumulation">
-            <!-- 今日积累模块 -->
-            <!-- 用户输入今日做了哪些事情 -->
-        </div>
-        <div id="guestbook">
-            <!-- 访客留言模块 -->
-        </div>
+        <!-- 省略其他模块 -->
     </div>
 
     <script>
         // JavaScript 代码可以在这里添加
         // 用于控制月光打开动画和主页模块显示
+        setTimeout(function() {
+            document.getElementById('opening-animation').style.display = 'none';
+            document.getElementById('main-content').style.display = 'block';
+        }, 4000); // 等待4秒后隐藏月光动画并显示主页模块
     </script>
 </body>
 </html>
